@@ -20,12 +20,11 @@ namespace SpecflowOctoberBatchPOM.Hooks
         private static ExtentHtmlReporter? _extentHtmlReporter;
         private static ExtentTest? _feature;
         private static ExtentTest? _scenario;
-        //private readonly DriverHelper driverHelper;
 
         public IWebDriver? Driver;
-        private readonly IObjectContainer objectContainer;
+        private readonly IContextManager objectContainer;
 
-        public Hooks(IObjectContainer _objectContainer)
+        public Hooks(IContextManager _objectContainer)
         {
             objectContainer = _objectContainer;
         }
@@ -58,7 +57,8 @@ namespace SpecflowOctoberBatchPOM.Hooks
                 .AddArguments("start-maximized",
                 "incognito");
             Driver = new ChromeDriver(options);
-            objectContainer?.RegisterInstanceAs(Driver);
+            objectContainer.ScenarioContext
+                .ScenarioContainer?.RegisterInstanceAs(Driver);
             if (null != scenarioContext)
             {
                 _scenarioContext = scenarioContext;

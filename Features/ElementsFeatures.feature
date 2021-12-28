@@ -14,4 +14,4 @@ Scenario: Elements test
 		And I click submit button
 	Then following data has been added
 	| FullName | Email        | CurrentAddress | ParmanentAddress |
-	| Testnam | test@abc.com | Testaddress    | TestPAddress     |
+	| Testname | test@abc.com | Testaddress    | TestPAddress     |
