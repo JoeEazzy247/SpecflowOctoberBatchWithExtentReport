@@ -142,7 +142,7 @@ this.FeatureBackground();
                             "CurrentAddress",
                             "ParmanentAddress"});
                 table2.AddRow(new string[] {
-                            "Testnam",
+                            "Testname",
                             "test@abc.com",
                             "Testaddress",
                             "TestPAddress"});

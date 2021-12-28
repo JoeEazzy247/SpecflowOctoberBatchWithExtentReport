@@ -14,9 +14,10 @@ namespace SpecflowOctoberBatchPOM.StepDefinitions
     public class ElementsFeaturesStepDefinitions
     {
         Homepage _homepage;
-        public ElementsFeaturesStepDefinitions(IObjectContainer objectContainer)
+        public ElementsFeaturesStepDefinitions(IContextManager objectContainer)
         {
-            _homepage = objectContainer.Resolve<Homepage>();    
+            _homepage = objectContainer.ScenarioContext
+                .ScenarioContainer.Resolve<Homepage>();    
         }
 
         [Given(@"I navigate to demoQa page")]
