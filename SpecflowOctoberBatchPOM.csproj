@@ -29,12 +29,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\Test.feature.cs">
+      <DependentUpon>Test.feature</DependentUpon>
+    </Compile>
     <Compile Update="Features\ElementsFeaturess.feature.cs">
       <DependentUpon>ElementsFeaturess.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Test.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\ElementsFeaturess.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
